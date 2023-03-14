@@ -1,0 +1,195 @@
+MATERIAL: "CHEST"
+PLACE-COUNTDOWN: 3
+SPAWN-EFFECT: "MOBSPAWNER_FLAMES"
+CHEST-LIMIT: 2
+
+TIER:
+  1:
+    ITEM: "REDSTONE"
+    NAME: "&aTier I Crate"
+    LORE:
+      - ""
+      - ""
+      - ""
+    ENCHANTMENTS:
+      - "DURABILITY:10"
+  2:
+    ITEM: "REDSTONE"
+    NAME: "&aTier II Crate"
+    LORE:
+      - ""
+      - ""
+      - ""
+    ENCHANTMENTS:
+      - "DURABILITY:10"
+  3:
+    ITEM: "REDSTONE"
+    NAME: "&aTier III Crate"
+    LORE:
+      - ""
+      - ""
+      - ""
+    ENCHANTMENTS:
+      - "DURABILITY:10"
+  4:
+    ITEM: "REDSTONE"
+    NAME: "&aTier IV Crate"
+    LORE:
+      - ""
+      - ""
+      - ""
+    ENCHANTMENTS:
+      - "DURABILITY:10"
+
+MESSAGES:
+  SET: "&cCrate has been successfully placed"
+  OFFLINE: "&cPlayer %player% is offline"
+
+MAIN_MENU:
+  TITLE: "&cMain Menu"
+  SIZE: 27
+  ITEMS:
+    1:
+      ITEM: "REDSTONE"
+      NAME: "&cTier I"
+      LORE:
+        - "&f&m--------------------------------"
+        - "&7Click to view tier I loot"
+        - "&f&m--------------------------------"
+      ENCHANTMENTS: {}
+      SLOT: 10
+      AMOUNT: 1
+      TIER: 1
+    2:
+      ITEM: "REDSTONE"
+      NAME: "&cTier II"
+      LORE:
+        - "&f&m--------------------------------"
+        - "&7Click to view tier II loot"
+        - "&f&m--------------------------------"
+      ENCHANTMENTS: { }
+      SLOT: 12
+      AMOUNT: 1
+      TIER: 2
+    3:
+      ITEM: "REDSTONE"
+      NAME: "&cTier III"
+      LORE:
+        - "&f&m--------------------------------"
+        - "&7Click to view tier III loot"
+        - "&f&m--------------------------------"
+      ENCHANTMENTS: { }
+      SLOT: 14
+      AMOUNT: 1
+      TIER: 3
+    4:
+      ITEM: "REDSTONE"
+      NAME: "&cTier IV"
+      LORE:
+        - "&f&m--------------------------------"
+        - "&7Click to view tier IV loot"
+        - "&f&m--------------------------------"
+      ENCHANTMENTS: { }
+      SLOT: 16
+      AMOUNT: 1
+      TIER: 4
+
+MENUS:
+  TIER-1:
+    TITLE: "&cTier-1 Inventory Loot"
+    SIZE: 54
+    ITEMS:
+      1:
+        ITEM: "DIAMOND"
+        NAME: "&cExample loot"
+        LORE:
+          - "&f&m----------------------"
+          - "&7Example loot"
+          - "&f&m----------------------"
+        ENCHANTMENTS:
+          - "DURABILITY:10"
+        AMOUNT: 1
+        SLOT: 1
+  TIER-2:
+    TITLE: "&cTier-2 Inventory Loot"
+    SIZE: 54
+    ITEMS:
+      1:
+        ITEM: "DIAMOND"
+        NAME: "&cExample loot"
+        LORE:
+          - "&f&m----------------------"
+          - "&7Example loot"
+          - "&f&m----------------------"
+        ENCHANTMENTS:
+          - "DURABILITY:10"
+        AMOUNT: 1
+        SLOT: 1
+  TIER-3:
+    TITLE: "&cTier-3 Inventory Loot"
+    SIZE: 54
+    ITEMS:
+      1:
+        ITEM: "DIAMOND"
+        NAME: "&cExample loot"
+        LORE:
+          - "&f&m----------------------"
+          - "&7Example loot"
+          - "&f&m----------------------"
+        ENCHANTMENTS:
+          - "DURABILITY:10"
+        AMOUNT: 1
+        SLOT: 1
+  TIER-4:
+    TITLE: "&cTier-4 Inventory Loot"
+    SIZE: 54
+    ITEMS:
+      1:
+        ITEM: "DIAMOND"
+        NAME: "&cExample loot"
+        LORE:
+          - "&f&m----------------------"
+          - "&7Example loot"
+          - "&f&m----------------------"
+        ENCHANTMENTS:
+          - "DURABILITY:10"
+        AMOUNT: 1
+        SLOT: 1
+
+LOOT-1:
+  1:
+    ITEM-ENABLED: true
+    ITEM: "DIAMOND"
+    NAME: "&aAmazing diamond"
+    LORE:
+      - "&f&m---------------------"
+      - "&7Insane diamond"
+      - "&f&m---------------------"
+    AMOUNT: 1
+    ENCHANTMENTS:
+      - "DURABILITY:10"
+    CHANCE: 100
+  2:
+    ITEM-ENABLED: true
+    ITEM: "GLASS"
+    NAME: "&aAmazing glass"
+    LORE:
+      - "&f&m---------------------"
+      - "&7Insane glass"
+      - "&f&m---------------------"
+    AMOUNT: 1
+    ENCHANTMENTS:
+      - "DURABILITY:10"
+    CHANCE: 100
+  3:
+    ITEM-ENABLED: true
+    ITEM: "STONE"
+    NAME: "&aAmazing stone"
+    LORE:
+      - "&f&m---------------------"
+      - "&7Insane stone"
+      - "&f&m---------------------"
+    AMOUNT: 1
+    ENCHANTMENTS:
+      - "DURABILITY:10"
+    CHANCE: 100

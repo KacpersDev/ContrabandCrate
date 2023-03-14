@@ -1,0 +1,8 @@
+name: Main
+version: '${project.version}'
+main: org.twistermc.contraband.Main
+api-version: 1.18
+authors: [ KacperM ]
+description: Contraband crate plugin for twistermc 
+commands:
+  contraband:
