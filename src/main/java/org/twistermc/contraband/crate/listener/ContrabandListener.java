@@ -124,23 +124,27 @@ public class ContrabandListener implements Listener {
                             event.setCancelled(true);
                             event.getClickedBlock().setType(Material.AIR);
                             loot(event.getPlayer());
-
-                            if (TierManager.tierLocations.size() == 1) {
-                                TierManager.tierLocations.clear();
-                                Main.reset();
-                            }
-                            TierManager.tierLocations.remove(location);
+                            location.getWorld().setType(location, Material.AIR);
                             Main.allowedAmount = Main.allowedAmount - 1;
                         }
                     }
+                    if (Main.allowedAmount == 0) {
+                        for (Location location : TierManager.tierLocations) {
+                            location.getWorld().setType(location, Material.AIR);
+                        }
+                        TierManager.tierLocations.clear();
+                        Main.reset();
+                        return;
+                    }
+                    if (TierManager.tierLocations.size() == 1) {
+                        for (Location location : TierManager.tierLocations) {
+                            location.getWorld().setType(location, Material.AIR);
+                        }
+                        TierManager.tierLocations.clear();
+                        Main.reset();
+                        return;
+                    }
                 }
-            } else {
-                event.getPlayer().sendMessage("Cannot open more");
-                for (Location location : TierManager.tierLocations) {
-                    location.getWorld().setType(location, Material.AIR);
-                }
-                TierManager.tierLocations.clear();
-                Main.reset();
             }
         }
     }
@@ -188,6 +192,10 @@ public class ContrabandListener implements Listener {
         if (i.size() > 0) {
             ItemStack reward = i.get(random.nextInt(i.size()));
             player.getInventory().addItem(reward);
+            player.sendMessage(Color.translate(Objects.requireNonNull(this.plugin.getConfigConfiguration().getString("LOOT_RECEIVED"))
+                    .replace("%player%", player.getName())
+                    .replace("%item_name%", Color.translate(reward.getItemMeta().getDisplayName()))
+                    .replace("%amount%", String.valueOf(reward.getAmount()))));
         }
     }
 

@@ -3,6 +3,18 @@ PLACE-COUNTDOWN: 3
 SPAWN-EFFECT: "MOBSPAWNER_FLAMES"
 CHEST-LIMIT: 2
 
+SET: "&aSuccessfully gave %amount% of keys to %target%"
+GIVEALL: "&aSuccessfully gave %amount% of keys to ALL"
+RELOADED: "&aSuccessfully reloaded plugin."
+LOOT_RECEIVED: "&aYou have won %item_name% in amount %amount%"
+
+USAGE:
+  - "&f8m-----------------------------------------------------"
+  - "&7/&ccontraband give <tier> <player> <amount>"
+  - "&7/contraband giveall <tier> <amount>"
+  - "&7/contraband reload"
+  - "&f8m-----------------------------------------------------"
+
 TIER:
   1:
     ITEM: "REDSTONE"
@@ -193,3 +205,4 @@ LOOT-1:
     ENCHANTMENTS:
       - "DURABILITY:10"
     CHANCE: 100
+

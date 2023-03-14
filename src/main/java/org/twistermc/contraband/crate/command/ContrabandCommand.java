@@ -5,6 +5,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import org.twistermc.contraband.Main;
@@ -62,6 +63,11 @@ public class ContrabandCommand implements CommandExecutor {
                     } else {
                         int amount = Integer.parseInt(args[3]);
                         this.crateManager.giveCrate(target, amount, tier);
+                        sender.sendMessage(Color.translate(Objects.requireNonNull(this.plugin.getConfigConfiguration()
+                                        .getString("SET"))
+                                .replace("%target%", target.getName())
+                                .replace("%amount%", String.valueOf(amount))
+                                .replace("%tier%", tier)));
                     }
                 }
             }
@@ -70,8 +76,8 @@ public class ContrabandCommand implements CommandExecutor {
                 sender.sendMessage(Color.translate(this.plugin.getConfigConfiguration().getString("no-permissions")));
                 return false;
             }
-
-            this.crateManager.reload();
+            YamlConfiguration.loadConfiguration(this.plugin.getConfiguration());
+            sender.sendMessage(Color.translate(this.plugin.getConfigConfiguration().getString("RELOADED")));
         } else if (args[0].equalsIgnoreCase("giveall")) {
             if (!sender.hasPermission("contraband.giveall")) {
                 sender.sendMessage(Color.translate(this.plugin.getConfigConfiguration().getString("no-permissions")));
@@ -87,6 +93,10 @@ public class ContrabandCommand implements CommandExecutor {
                 } else {
                     int amount = Integer.parseInt(args[2]);
                     this.crateManager.giveAllCrate(amount, tier);
+                    sender.sendMessage(Color.translate(Objects.requireNonNull(this.plugin.getConfigConfiguration()
+                                    .getString("GIVEALL"))
+                            .replace("%amount%", String.valueOf(amount))
+                            .replace("%tier%", tier)));
                 }
             }
         }
@@ -95,7 +105,7 @@ public class ContrabandCommand implements CommandExecutor {
     }
 
     private void wrongUsage(CommandSender sender){
-        for (final String lines : this.plugin.getConfigConfiguration().getStringList("usage")) {
+        for (final String lines : this.plugin.getConfigConfiguration().getStringList("USAGE")) {
             sender.sendMessage(Color.translate(lines));
         }
     }
